@@ -38,6 +38,12 @@ a:visited {
   color: currentColor;
   outline: none; }
 
+select,
+select:active,
+select:focus {
+  outline: none;
+  border: 0; }
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
@@ -97,28 +103,50 @@ a:visited {
     .converter__cur .cur-container {
       display: grid;
       padding-bottom: .5rem;
-      border-bottom: 0.5px solid rgba(168, 181, 201, 0.4); }
+      border-bottom: 0.5px solid rgba(168, 181, 201, 0.4);
+      transition: all .5s; }
+      .converter__cur .cur-container:hover {
+        border-bottom: 0.5px solid rgba(255, 0, 0, 0.4); }
     .converter__cur .cur__label {
       line-height: 1.5;
       margin-left: .4rem;
       margin-bottom: 1rem; }
     .converter__cur .cur-content {
       display: flex;
-      justify-content: space-between; }
+      justify-content: space-between;
+      position: relative; }
     .converter__cur .cur-select {
       border: none;
       background-color: transparent;
+      width: 100%;
+      height: 3rem;
       color: #384955;
       font-family: "Lato", sans-serif;
       font-size: 1.2rem;
-      font-weight: 700; }
+      font-weight: 700;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url(../img/caret.png), linear-gradient(to right, #fff, #fff);
+      background-size: .65em auto, 100%;
+      background-repeat: no-repeat;
+      background-position: right;
+      cursor: pointer;
+      transition: all .5s; }
+      .converter__cur .cur-select:hover {
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.15); }
     .converter__cur .cur-option {
       white-space: unset; }
-    .converter__cur .cur-img svg {
-      height: 2rem;
-      width: 2rem;
-      border: 1px solid #eee;
-      border-radius: 100%; }
+    .converter__cur .cur-img {
+      position: absolute;
+      top: .5rem;
+      right: 2rem;
+      transition: all .2s; }
+      .converter__cur .cur-img svg {
+        height: 2rem;
+        width: 2rem;
+        border: 1px solid #eee;
+        border-radius: 100%; }
   .converter .bg {
     margin: 0 2rem;
     position: relative;

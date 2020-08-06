@@ -33,3 +33,10 @@ a:visited {
     color: currentColor;
     outline: none;
 }
+
+select,
+select:active,
+select:focus {
+    outline: none;
+    border: 0;
+}
