@@ -1,0 +1,47 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    align-items: center;
+    justify-items: center;
+
+    padding: 5rem 2rem;
+
+    border-bottom: $border-light;
+
+    &__text {
+
+        justify-self: start;
+
+        h1 {
+            background: linear-gradient(to right bottom, rgba($color-primary, 1), rgba($color-primary, 1)); //  $color-primary;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+    }
+
+    .nav {
+        justify-self: stretch;
+
+        &__list {
+            list-style-type: none;
+            display: flex;
+
+            justify-content: space-evenly;
+        }
+
+        &__item {
+            text-transform: capitalize;
+            font-weight: 700;
+            transition: all .2s;
+
+            &:active {
+                color: red;
+            }
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+}

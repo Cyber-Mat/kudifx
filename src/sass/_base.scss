@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.6;
+    font-family: $font-primary;
+
+    background-color: $color-grey-dark-1;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: $color-grey-dark-3;
+}
+
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+    color: currentColor;
+    outline: none;
+}
