@@ -78,9 +78,9 @@ a:visited {
 
 .converter {
   display: grid;
-  grid-template-rows: 2fr 1fr 4fr;
+  grid-template-rows: .5fr .25fr 1fr;
   grid-row-gap: 2rem;
-  padding: 4rem;
+  padding: 3rem;
   align-items: center; }
   .converter__header h1 {
     font-weight: 700;
@@ -92,74 +92,67 @@ a:visited {
   .converter__cur {
     display: grid;
     grid-template-columns: 1fr min-content 1fr;
-    padding: 1.5rem;
-    border-bottom: 0.5px solid rgba(168, 181, 201, 0.4);
-    align-items: end; }
-    .converter__cur .from {
-      grid-column: 1/2;
-      display: grid; }
-      .converter__cur .from__label {
-        line-height: 1.5;
-        margin-left: .4rem;
-        margin-bottom: 1rem; }
-      .converter__cur .from__content {
-        display: flex;
-        justify-content: space-between; }
-        .converter__cur .from__content-select {
-          border: none;
-          background-color: transparent;
-          color: #384955;
-          font-family: "Lato", sans-serif;
-          font-size: 1.2rem;
-          font-weight: 700; }
-        .converter__cur .from__content-option {
-          white-space: unset; }
-        .converter__cur .from__content-img {
-          height: 2rem;
-          width: 2rem;
-          overflow: hidden;
-          border-radius: 100%;
-          padding: 2px;
-          border: 0.5px solid #384955;
-          justify-self: flex-end; }
-          .converter__cur .from__content-img .from__img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border-radius: 100%; }
-    .converter__cur .to {
-      grid-column: 3/4;
-      display: grid; }
-      .converter__cur .to__label {
-        line-height: 1.5;
-        margin-left: .4rem;
-        margin-bottom: 1rem; }
-      .converter__cur .to__content {
-        display: flex;
-        justify-content: space-between; }
-        .converter__cur .to__content-select {
-          border: none;
-          background-color: transparent;
-          color: #384955;
-          font-family: "Lato", sans-serif;
-          font-size: 1.2rem;
-          font-weight: 700; }
-        .converter__cur .to__content-option {
-          white-space: unset; }
-        .converter__cur .to__content-img {
-          height: 2rem;
-          width: 2rem;
-          overflow: hidden;
-          border-radius: 100%;
-          padding: 2px;
-          border: 0.5px solid #384955;
-          justify-self: flex-end; }
-          .converter__cur .to__content-img .to__img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border-radius: 100%; }
+    align-items: end;
+    transform: translateY(-30%); }
+    .converter__cur .cur-container {
+      display: grid;
+      padding-bottom: .5rem;
+      border-bottom: 0.5px solid rgba(168, 181, 201, 0.4); }
+    .converter__cur .cur__label {
+      line-height: 1.5;
+      margin-left: .4rem;
+      margin-bottom: 1rem; }
+    .converter__cur .cur-content {
+      display: flex;
+      justify-content: space-between; }
+    .converter__cur .cur-select {
+      border: none;
+      background-color: transparent;
+      color: #384955;
+      font-family: "Lato", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700; }
+    .converter__cur .cur-option {
+      white-space: unset; }
+    .converter__cur .cur-img svg {
+      height: 2rem;
+      width: 2rem;
+      border: 1px solid #eee;
+      border-radius: 100%; }
+  .converter .bg {
+    margin: 0 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 9.5rem;
+    height: 9.5rem;
+    transform: translateY(37%); }
+    .converter .bg::after {
+      display: block;
+      content: '';
+      width: 80%;
+      height: 80%;
+      border-radius: 100%;
+      background-color: rgba(76, 139, 245, 0.2);
+      z-index: 1;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50.9%, -49.5%); }
   .converter__icon {
-    margin: 2rem; }
+    border-radius: 100%;
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: #4C8BF5;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .converter__icon svg {
+      width: 2rem;
+      height: 2rem;
+      fill: #fff; }

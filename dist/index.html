@@ -36,29 +36,38 @@
       </div>
 
       <div class="converter__cur">
-        <div class="from">
-          <label class="from__label" for="from__content-select">From</label>
-          <div class="from__content">
-            <select class="from__content-select" name="from__content-select">
-              <option class="from__content-option" value="usd">USD - Dollar</option>
+        <div class="cur-container from">
+          <label class="cur-label from__label" for="from__content-select">From</label>
+          <div class="cur-content from__content">
+            <select class="cur-select from__content-select" name="from__content-select">
+              <option class="cur-option from__content-option" value="usd">USD - Dollar</option>
             </select>
-            <figure class="from__content-img"><img src="./img//svg//us.svg" alt="usa" class="from__img" /></figure>
+            <figure class="cur-img from__content-img">
+              <svg>
+                <use xlink:href="img/sprite.svg#icon-USD"></use>
+              </svg></figure>
           </div>
         </div>
+        <div class="bg">
+          <div class="converter__icon">
+            <svg>
+              <use xlink:href="img/sprite.svg#icon-shuffle"></use>
+            </svg>
+          </div>
 
-        <div class="converter__icon">
-          <svg>
-            <use xlink:href="sprite.svg#icon-spinner9"></use>
-          </svg>
         </div>
 
-        <div class="to">
-          <label class="to__label" for="to__content-select">To</label>
-          <div class="to__content">
-            <select class="to__content-select" name="to__content-select">
-              <option class="to__content-option" value="usd">RUB - Ruble</option>
+        <div class="cur-container to">
+          <label class="cur-label to__label" for="to__content-select">To</label>
+          <div class="cur-content to__content">
+            <select class="cur-select to__content-select" name="to__content-select">
+              <option class="cur-option to__content-option" value="usd">RUB - Ruble</option>
             </select>
-            <figure class="to__content-img"><img src="./img//svg//rus.svg" alt="usa" class="to__img" /></figure>
+            <figure class="cur-img to__content-img">
+              <svg>
+                <use xlink:href="img/sprite.svg#icon-RUB"></use>
+              </svg></figure>
+            </figure>
           </div>
         </div>
       </div>
