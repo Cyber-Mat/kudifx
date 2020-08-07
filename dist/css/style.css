@@ -85,7 +85,6 @@ select:focus {
 .converter {
   display: grid;
   grid-template-rows: .5fr .25fr 1fr;
-  grid-row-gap: 2rem;
   padding: 3rem;
   align-items: center; }
   .converter__header h1 {
@@ -98,8 +97,7 @@ select:focus {
   .converter__cur {
     display: grid;
     grid-template-columns: 1fr min-content 1fr;
-    align-items: end;
-    transform: translateY(-30%); }
+    align-items: end; }
     .converter__cur .cur-container {
       display: grid;
       padding-bottom: .5rem;
@@ -156,7 +154,7 @@ select:focus {
     border-radius: 100%;
     width: 9.5rem;
     height: 9.5rem;
-    transform: translateY(37%); }
+    transform: translateY(20%); }
     .converter .bg::after {
       display: block;
       content: '';
@@ -165,11 +163,10 @@ select:focus {
       border-radius: 100%;
       background-color: rgba(76, 139, 245, 0.2);
       z-index: 1;
-      margin: 0 auto;
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50.9%, -49.5%); }
+      transform: translate(-50%, -50%); }
   .converter__icon {
     border-radius: 100%;
     width: 5.5rem;
@@ -184,3 +181,30 @@ select:focus {
       width: 2rem;
       height: 2rem;
       fill: #fff; }
+  .converter__display {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 14rem;
+    transform: translateY(40%); }
+    .converter__display div {
+      display: flex; }
+    .converter__display .converter__input {
+      display: block;
+      border: 0;
+      border-bottom: 0.5px solid rgba(168, 181, 201, 0.4);
+      padding: 1rem;
+      outline: 0;
+      width: 100%;
+      color: #94A6B8;
+      font-size: 6rem;
+      font-family: "Recursive", sans-serif;
+      font-weight: 300; }
+
+.from-symbol,
+.to-symbol {
+  display: inline-block;
+  width: 30%;
+  color: #94A6B8;
+  font-size: 6rem;
+  font-family: "Recursive", sans-serif;
+  font-weight: 300; }

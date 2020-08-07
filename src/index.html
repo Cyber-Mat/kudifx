@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kudiFx</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header__text">
+        <h1>kudiFx</h1>
+      </div>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#">Home</a></li>
+          <li class="nav__item"><a href="#">Converter</a></li>
+          <li class="nav__item"><a href="#">Rates</a></li>
+          <li class="nav__item"><a href="#">Feed</a></li>
+        </ul>
+      </nav>
+      <div class="header__date">
+        Date
+      </div>
+    </header>
+
+    <section class="converter">
+      <div class="converter__header">
+        <h1 class="converter__title">Currency Converter</h1>
+        <p class="converter__date">Today 2020-01-08 12:34 UTC</p>
+      </div>
+
+      <div class="converter__cur">
+        <div class="cur-container from">
+          <label class="cur-label from__label" for="from__content-select">From</label>
+          <div class="cur-content from__content">
+            <select class="cur-select from__content-select" name="from__content-select">
+              <!-- <option class="cur-option from__content-option" value="usd">USD - Dollar</option> -->
+            </select>
+            <figure class="cur-img from__content-img">
+              <svg>
+                <use xlink:href="img/sprite.svg#icon-AED"></use>
+              </svg></figure>
+          </div>
+        </div>
+
+        <div class="bg">
+          <div class="converter__icon">
+            <svg>
+              <use xlink:href="img/sprite.svg#icon-shuffle"></use>
+            </svg>
+          </div>
+
+        </div>
+
+        <div class="cur-container to">
+          <label class="cur-label to__label" for="to__content-select">To</label>
+          <div class="cur-content to__content">
+            <select class="cur-select to__content-select" name="to__content-select">
+              <!-- <option class="cur-option to__content-option" value="usd">RUB - Ruble</option> -->
+            </select>
+            <figure class="cur-img to__content-img">
+              <svg>
+                <use xlink:href="img/sprite.svg#icon-AED"></use>
+              </svg></figure>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="converter__display">
+        <div>
+          <span class="from-symbol">د.إ</span>
+          <input type="text" class="converter__input input-from">
+        </div>
+        <div>
+          <span class="to-symbol">د.إ</span>
+          <input type="text" class="converter__input input-to">
+        </div>
+      </div>
+    </section>
+
+    <section class="rates">
+      RATES
+    </section>
+  </div>
+  <script src="dist/js/main.js"></script>
+</body>
+
+</html>

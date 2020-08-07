@@ -166,7 +166,7 @@ const CURRENCY_DATA = [
   { code: 'ZAR', name: 'South African Rand' },
   { code: 'ZMK', name: 'Zambian Kwacha (pre-2013)' },
   { code: 'ZMW', name: 'Zambian Kwacha' },
-  { code: 'ZWL', name: 'Zimbabwean Dollar;' },
+  { code: 'ZWL', name: 'Zimbabwean Dollar' },
 ];
 
 export default CURRENCY_DATA;

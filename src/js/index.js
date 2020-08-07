@@ -1,6 +1,49 @@
-let a = [1, 2, 3];
-const [b, c, d] = a;
-console.log(b, c, d);
+import CURRENCY_DATA from './currency.data';
+import SYMBOL_DATA from './symbols.data';
+
+import '../../dist/css/style.css';
+
+import viewCtrl, { variables } from './view';
+import modelCtrl from './model';
+
+const appCtrl = ((viewCtrl, modelCtrl) => {
+  const state = modelCtrl.state;
+  const DOM = viewCtrl.DOM;
+  const {
+    selectArray,
+    selectIconArray,
+    selectFrom,
+    selectTo,
+    iconFrom,
+    iconTo,
+    converterInputArray,
+    fromConverterInput,
+    toConverterInput,
+  } = variables;
+
+  // FROM DROPDOWN EVENT LISTENER
+  selectFrom.addEventListener('change', () => {
+    // Render Icons
+    viewCtrl.renderIcon('from');
+
+    // Render currency symbol
+    state.curFrom = selectFrom.value;
+    viewCtrl.renderSymbol(state, 'from');
+  });
+
+  // TO DROPDOWN EVENT LISTENER
+  selectTo.addEventListener('change', () => {
+    // Render Icons
+    viewCtrl.renderIcon('to');
+
+    // Render currency symbol
+    state.curTo = selectTo.value;
+    viewCtrl.renderSymbol(state, 'to');
+  });
+
+  // WINDOW EVENT LISTENER
+  window.addEventListener('load', viewCtrl.renderDropdown);
+})(viewCtrl, modelCtrl);
 
 /**
  * AED: 4.364448
