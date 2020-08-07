@@ -7,7 +7,14 @@ import viewCtrl, { variables } from './view';
 import modelCtrl from './model';
 
 const appCtrl = ((viewCtrl, modelCtrl) => {
-  const state = modelCtrl.state;
+  const state = {
+    curFrom: 'AED',
+    curTo: 'AED',
+    valueFrom: 0,
+    valueTo: 0,
+    apiData: {},
+  };
+
   const DOM = viewCtrl.DOM;
   const {
     selectArray,
@@ -25,7 +32,6 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
   selectFrom.addEventListener('change', () => {
     // Render Icons
     viewCtrl.renderIcon('from');
-
     // Render currency symbol
     state.curFrom = selectFrom.value;
     viewCtrl.renderSymbol(state, 'from');
@@ -35,14 +41,30 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
   selectTo.addEventListener('change', () => {
     // Render Icons
     viewCtrl.renderIcon('to');
-
     // Render currency symbol
     state.curTo = selectTo.value;
     viewCtrl.renderSymbol(state, 'to');
   });
 
   // WINDOW EVENT LISTENER
-  window.addEventListener('load', viewCtrl.renderDropdown);
+  window.addEventListener('load', () => {
+    viewCtrl.renderDropdown();
+
+    modelCtrl.getRates(state);
+  });
+
+  ////////////////////////////////////
+  fromConverterInput.addEventListener('input', e => {
+    state.valueFrom = parseInt(e.target.value);
+    const value = modelCtrl.calculateValue(state, 'from');
+    toConverterInput.value = value;
+  });
+
+  toConverterInput.addEventListener('input', e => {
+    state.valueTo = parseInt(e.target.value);
+    const value = modelCtrl.calculateValue(state, 'to');
+    fromConverterInput.value = value;
+  });
 })(viewCtrl, modelCtrl);
 
 /**
