@@ -81,6 +81,8 @@ select:focus {
         color: red; }
       .header .nav__item:hover {
         color: #164CBC; }
+  .header__date {
+    justify-self: end; }
 
 .converter {
   display: grid;
@@ -139,7 +141,8 @@ select:focus {
       position: absolute;
       top: .5rem;
       right: 2rem;
-      transition: all .2s; }
+      transition: all .2s;
+      border-radius: 100%; }
       .converter__cur .cur-img svg {
         height: 2rem;
         width: 2rem;
@@ -158,10 +161,10 @@ select:focus {
     .converter .bg::after {
       display: block;
       content: '';
-      width: 80%;
-      height: 80%;
+      width: 65%;
+      height: 65%;
       border-radius: 100%;
-      background-color: rgba(76, 139, 245, 0.2);
+      background-color: rgba(76, 139, 245, 0.15);
       z-index: 1;
       position: absolute;
       top: 50%;
@@ -169,8 +172,8 @@ select:focus {
       transform: translate(-50%, -50%); }
   .converter__icon {
     border-radius: 100%;
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
     background-color: #4C8BF5;
     cursor: pointer;
     z-index: 10;
@@ -180,7 +183,8 @@ select:focus {
     .converter__icon svg {
       width: 2rem;
       height: 2rem;
-      fill: #fff; }
+      fill: #fff;
+      border-radius: 100%; }
   .converter__display {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

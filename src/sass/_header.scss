@@ -9,7 +9,6 @@
     border-bottom: $border-light;
 
     &__text {
-
         justify-self: start;
 
         h1 {
@@ -43,5 +42,9 @@
                 color: $color-primary;
             }
         }
+    }
+
+    &__date {
+        justify-self: end;
     }
 }

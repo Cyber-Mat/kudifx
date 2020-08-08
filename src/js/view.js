@@ -8,14 +8,16 @@ const DOM = {
   fromSymbol: '.from-symbol',
   toSymbol: '.to-symbol',
   converterInput: '.converter__input',
+  dateSpan: '.date',
 };
 
-const selectArray = Array.from(document.querySelectorAll('.cur-select'));
+const selectArray = Array.from(document.querySelectorAll(DOM.select));
 const selectIconArray = Array.from(document.querySelectorAll(DOM.selectIcon));
 const [selectFrom, selectTo] = selectArray;
 const [iconFrom, iconTo] = selectIconArray;
 const converterInputArray = Array.from(document.querySelectorAll(DOM.converterInput));
 const [fromConverterInput, toConverterInput] = converterInputArray;
+const converterDate = document.querySelector(DOM.dateSpan);
 
 export const variables = {
   selectArray,
@@ -27,6 +29,7 @@ export const variables = {
   converterInputArray,
   fromConverterInput,
   toConverterInput,
+  converterDate,
 };
 const renderDropdown = () => {
   const html = `<option class="cur-option" value="%%value%%">%%code%% - %%name%%</option>`;
@@ -71,11 +74,19 @@ const renderSymbol = (state, type) => {
     }
   });
 };
+
+const setTime = () => {
+  const time = new Date();
+  converterDate.textContent = time;
+  return time;
+};
+
 const viewCtrl = (() => ({
   DOM,
   renderDropdown,
   renderIcon,
   renderSymbol,
+  setTime,
 }))();
 
 export default viewCtrl;

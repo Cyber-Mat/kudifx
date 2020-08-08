@@ -26,7 +26,12 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     converterInputArray,
     fromConverterInput,
     toConverterInput,
+    converterDate,
   } = variables;
+
+  /**
+   *  EVENT LISTENERS
+   */
 
   // FROM DROPDOWN EVENT LISTENER
   selectFrom.addEventListener('change', () => {
@@ -46,24 +51,34 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     viewCtrl.renderSymbol(state, 'to');
   });
 
+  // FROM INPUT EVENT LISTENER
+  fromConverterInput.addEventListener('input', e => {
+    state.valueFrom = parseFloat(e.target.value);
+    const value = modelCtrl.calculateValue(state, 'from');
+
+    if (value) toConverterInput.value = value.toFixed(4);
+    else toConverterInput.value = 0;
+  });
+
+  // TO INPUT EVENT LISTENER
+  toConverterInput.addEventListener('input', e => {
+    state.valueTo = parseFloat(e.target.value);
+    const value = modelCtrl.calculateValue(state, 'to');
+
+    if (value) fromConverterInput.value = value.toFixed(4);
+    else fromConverterInput.value = 0;
+  });
+
   // WINDOW EVENT LISTENER
   window.addEventListener('load', () => {
+    // Render dropdown options on page load
     viewCtrl.renderDropdown();
 
+    // Make API request and store in state
     modelCtrl.getRates(state);
-  });
 
-  ////////////////////////////////////
-  fromConverterInput.addEventListener('input', e => {
-    state.valueFrom = parseInt(e.target.value);
-    const value = modelCtrl.calculateValue(state, 'from');
-    toConverterInput.value = value;
-  });
-
-  toConverterInput.addEventListener('input', e => {
-    state.valueTo = parseInt(e.target.value);
-    const value = modelCtrl.calculateValue(state, 'to');
-    fromConverterInput.value = value;
+    // Set time
+    window.setInterval(viewCtrl.setTime, 1000);
   });
 })(viewCtrl, modelCtrl);
 
