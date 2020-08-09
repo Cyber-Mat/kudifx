@@ -157,6 +157,7 @@
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 14rem;
         transform: translateY(40%);
+        //overflow: hidden;
 
         div {
             display: flex;
@@ -168,7 +169,7 @@
             border-bottom: $border-light;
             padding: 1rem;
             outline: 0;
-            width: 100%;
+            width: 80%;
 
             color: $color-grey-dark-2;
             font-size: 6rem;
@@ -181,7 +182,7 @@
 .from-symbol,
 .to-symbol {
     display: inline-block;
-    width: 30%;
+    width: 20%;
 
     color: $color-grey-dark-2;
     font-size: 6rem;
