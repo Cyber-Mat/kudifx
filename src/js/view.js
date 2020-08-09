@@ -9,6 +9,7 @@ const DOM = {
   toSymbol: '.to-symbol',
   converterInput: '.converter__input',
   dateSpan: '.date',
+  ratesBody: '.rates__body',
 };
 
 const selectArray = Array.from(document.querySelectorAll(DOM.select));
@@ -81,12 +82,47 @@ const setTime = () => {
   return time;
 };
 
+const renderRates = state => {
+  for (let s = 0; s < CURRENCY_DATA.length; s += 10) {
+    const htmlArr = [];
+    const html1 = `<span class="code">%%{code}%%</span>
+            <span class="name">%%{name}%%</span>
+            <span class="value %%{color}%%">%%{value}%%</span>`;
+
+    for (let i = s; i < s + 10; i++) {
+      if (i === CURRENCY_DATA.length) break;
+
+      let newHtml1 = html1;
+
+      newHtml1 = newHtml1.replace('%%{code}%%', CURRENCY_DATA[i].code);
+      newHtml1 = newHtml1.replace('%%{name}%%', CURRENCY_DATA[i].name <= 15 ? CURRENCY_DATA[i].name : `${CURRENCY_DATA[i].name.slice(0, 14)}..`);
+      newHtml1 = newHtml1.replace('%%{value}%%', state.apiData[CURRENCY_DATA[i].code]);
+      newHtml1 = newHtml1.replace('%%{color}%%', state.apiData[CURRENCY_DATA[i].code] > 1 ? 'red' : 'green');
+
+      htmlArr.push(newHtml1);
+    }
+    const html2 = `<div class="rates__col rates__col-1">
+         <!-- <div class="rates__col-header rates__col-1-header">
+            <span class="code">Code</span>
+            <span class="name">Name</span>
+            <span class="value">Value</span>
+          </div> -->
+          <div class="rates__col-body rates__col-1-body">
+          ${htmlArr.join('')}
+           </div>
+        </div>`;
+
+    document.querySelector(DOM.ratesBody).insertAdjacentHTML('beforeend', html2);
+  }
+};
+
 const viewCtrl = (() => ({
   DOM,
   renderDropdown,
   renderIcon,
   renderSymbol,
   setTime,
+  renderRates,
 }))();
 
 export default viewCtrl;

@@ -258,18 +258,16 @@ select:focus {
     grid-column-gap: 3rem;
     grid-template-rows: min-content 1fr;
     grid-row-gap: 1rem;
-    /*
-        justify-items: center;
-        animation-name: slide;
-        animation-duration: 30s;
-        animation-timing-function: linear;
-        animation-direction: alternate;
-        animation-iteration-count: infinite;
-
-        &:hover {
-            animation-play-state: paused;
-        }
-        */ }
+    font-size: 1.2rem;
+    font-weight: 400;
+    justify-items: center;
+    animation-name: slide;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite; }
+    .rates__body:hover {
+      animation-play-state: paused; }
   .rates__col-header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -278,16 +276,22 @@ select:focus {
     font-weight: 400;
     color: #130f40; }
     .rates__col-header .value {
-      justify-self: center; }
+      justify-self: center;
+      transform: translateX(-2rem); }
   .rates__col-body {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, max-content);
-    grid-column-gap: 3rem;
-    font-size: 1.2rem; }
+    grid-column-gap: 3rem; }
 
 @keyframes slide {
   0% {
     transform: translateX(0); }
   100% {
     transform: translateX(-65%); } }
+
+.green {
+  color: green; }
+
+.red {
+  color: red; }

@@ -50,7 +50,7 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     state.curTo = selectTo.value;
     viewCtrl.renderSymbol(state, 'to');
   });
-  /*
+
   // FROM INPUT EVENT LISTENER
   fromConverterInput.addEventListener('input', e => {
     state.valueFrom = parseFloat(e.target.value);
@@ -69,18 +69,19 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     else fromConverterInput.value = 0;
   });
 
-  */
-
   // WINDOW EVENT LISTENER
-  window.addEventListener('load', () => {
+  window.addEventListener('load', async () => {
     // Render dropdown options on page load
     viewCtrl.renderDropdown();
 
     // Make API request and store in state
-    // modelCtrl.getRates(state);
+    await modelCtrl.getRates(state);
 
     // Set time
     window.setInterval(viewCtrl.setTime, 1000);
+
+    //
+    viewCtrl.renderRates(state);
   });
 })(viewCtrl, modelCtrl);
 
