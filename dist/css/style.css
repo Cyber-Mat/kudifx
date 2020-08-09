@@ -225,14 +225,13 @@ select:focus {
     width: 0; }
   .rates__header {
     display: flex;
-    align-items: center; }
+    align-items: flex-end; }
     .rates__header h1 {
       font-weight: 700;
       letter-spacing: .3rem; }
     .rates__header .rates__base {
       border: none;
       background-color: transparent;
-      width: 4rem;
       height: 3rem;
       margin-left: 4rem;
       color: #384955;

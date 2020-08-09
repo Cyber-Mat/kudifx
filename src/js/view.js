@@ -10,6 +10,7 @@ const DOM = {
   converterInput: '.converter__input',
   dateSpan: '.date',
   ratesBody: '.rates__body',
+  ratesBaseSelect: '.rates__base',
 };
 
 const selectArray = Array.from(document.querySelectorAll(DOM.select));
@@ -32,7 +33,7 @@ export const variables = {
   toConverterInput,
   converterDate,
 };
-const renderDropdown = () => {
+const renderDropdown = type => {
   const html = `<option class="cur-option" value="%%value%%">%%code%% - %%name%%</option>`;
   let newHtml;
 
@@ -41,10 +42,14 @@ const renderDropdown = () => {
     newHtml = newHtml.replace('%%name%%', cur.name);
     newHtml = newHtml.replace('%%value%%', cur.code);
 
-    // Render select options with objects from data array
-    selectArray.forEach(select => {
-      select.insertAdjacentHTML('beforeend', newHtml);
-    });
+    if (type === 'main') {
+      // Render select options with objects from data array
+      selectArray.forEach(select => {
+        select.insertAdjacentHTML('beforeend', newHtml);
+      });
+    } else if (type === 'base') {
+      document.querySelector(DOM.ratesBaseSelect).insertAdjacentHTML('beforeend', newHtml);
+    }
   });
 };
 
