@@ -40,6 +40,15 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     // Render currency symbol
     state.curFrom = selectFrom.value;
     viewCtrl.renderSymbol(state, 'from');
+
+    /////////////////////////////////////////
+    state.valueTo = parseFloat(toConverterInput.value);
+    if (state.valueTo) {
+      const value = modelCtrl.calculateValue(state, 'to');
+
+      if (value) fromConverterInput.value = value.toFixed(4);
+      else fromConverterInput.value = 0;
+    }
   });
 
   // TO DROPDOWN EVENT LISTENER
@@ -49,6 +58,15 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     // Render currency symbol
     state.curTo = selectTo.value;
     viewCtrl.renderSymbol(state, 'to');
+
+    /////////////////////////////////////////
+    state.valueFrom = parseFloat(fromConverterInput.value);
+    if (state.valueFrom) {
+      const value = modelCtrl.calculateValue(state, 'from');
+
+      if (value) toConverterInput.value = value.toFixed(4);
+      else toConverterInput.value = 0;
+    }
   });
 
   // FROM INPUT EVENT LISTENER
@@ -80,7 +98,7 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     // Set time
     window.setInterval(viewCtrl.setTime, 1000);
 
-    //
+    // Render exchange rates on page load
     viewCtrl.renderRates(state);
   });
 })(viewCtrl, modelCtrl);

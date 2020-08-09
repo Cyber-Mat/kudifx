@@ -83,6 +83,7 @@ const setTime = () => {
 };
 
 const renderRates = state => {
+  // Iterate through currency list in multiples of 10(max allowed by page layout per column)
   for (let s = 0; s < CURRENCY_DATA.length; s += 10) {
     const htmlArr = [];
     const html1 = `<span class="code">%%{code}%%</span>
@@ -92,15 +93,19 @@ const renderRates = state => {
     for (let i = s; i < s + 10; i++) {
       if (i === CURRENCY_DATA.length) break;
 
+      // Make individual currency markup
       let newHtml1 = html1;
-
       newHtml1 = newHtml1.replace('%%{code}%%', CURRENCY_DATA[i].code);
-      newHtml1 = newHtml1.replace('%%{name}%%', CURRENCY_DATA[i].name <= 15 ? CURRENCY_DATA[i].name : `${CURRENCY_DATA[i].name.slice(0, 14)}..`);
-      newHtml1 = newHtml1.replace('%%{value}%%', state.apiData[CURRENCY_DATA[i].code]);
+      //newHtml1 = newHtml1.replace('%%{name}%%', CURRENCY_DATA[i].name <= 15 ? CURRENCY_DATA[i].name : `${CURRENCY_DATA[i].name.slice(0, 14)}...`);
+      newHtml1 = newHtml1.replace('%%{name}%%', CURRENCY_DATA[i].name);
+      newHtml1 = newHtml1.replace('%%{value}%%', state.apiData[CURRENCY_DATA[i].code] ? state.apiData[CURRENCY_DATA[i].code] : '-');
       newHtml1 = newHtml1.replace('%%{color}%%', state.apiData[CURRENCY_DATA[i].code] > 1 ? 'red' : 'green');
 
+      // Store individual currency markup in array
       htmlArr.push(newHtml1);
     }
+
+    // Create column of 10 currencies
     const html2 = `<div class="rates__col rates__col-1">
          <!-- <div class="rates__col-header rates__col-1-header">
             <span class="code">Code</span>
@@ -112,6 +117,7 @@ const renderRates = state => {
            </div>
         </div>`;
 
+    // Render column of 10 currencies
     document.querySelector(DOM.ratesBody).insertAdjacentHTML('beforeend', html2);
   }
 };
