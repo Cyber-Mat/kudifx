@@ -18,7 +18,8 @@ $color-grey:#dff9fb;
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
 
 body {
   min-height: 100vh;
@@ -61,12 +62,18 @@ select:focus {
   padding: 5rem 2rem;
   border-bottom: 0.5px solid rgba(168, 181, 201, 0.4); }
   .header__text {
-    justify-self: start; }
+    justify-self: start;
+    display: flex;
+    align-items: center; }
     .header__text h1 {
       background: linear-gradient(to right bottom, #164cbc, #164cbc);
       color: transparent;
       -webkit-background-clip: text;
       background-clip: text; }
+    .header__text .logo {
+      width: 9rem;
+      height: 7rem;
+      transform: translateY(-0.5rem); }
   .header .nav {
     justify-self: stretch; }
     .header .nav__list {

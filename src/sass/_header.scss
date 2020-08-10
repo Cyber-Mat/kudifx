@@ -5,17 +5,26 @@
     justify-items: center;
 
     padding: 5rem 2rem;
-
     border-bottom: $border-light;
+
 
     &__text {
         justify-self: start;
+
+        display: flex;
+        align-items: center;
 
         h1 {
             background: linear-gradient(to right bottom, rgba($color-primary, 1), rgba($color-primary, 1)); //  $color-primary;
             color: transparent;
             -webkit-background-clip: text;
             background-clip: text;
+        }
+
+        .logo {
+            width: 9rem;
+            height: 7rem;
+            transform: translateY(-.5rem);
         }
     }
 
