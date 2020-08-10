@@ -27,6 +27,7 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     fromConverterInput,
     toConverterInput,
     converterDate,
+    ratesBaseSelect,
   } = variables;
 
   /**
@@ -101,7 +102,18 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     // Render exchange rate base currency options on page load
     viewCtrl.renderDropdown('base');
 
-    // Render exchange rates on page load
-    viewCtrl.renderRates(state);
+    // Render exchange rates on page load in USD(convert from EUR default of API )
+    const base = ratesBaseSelect.value;
+    const newApiData = modelCtrl.changeBase(state, base);
+
+    viewCtrl.renderRates(newApiData);
+
+    // RATES DROPDOWN EVENT LISTENER
+    ratesBaseSelect.addEventListener('change', e => {
+      const base = e.target.value;
+      const newApiData = modelCtrl.changeBase(state, base);
+
+      viewCtrl.renderRates(newApiData);
+    });
   });
 })(viewCtrl, modelCtrl);

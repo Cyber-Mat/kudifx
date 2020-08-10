@@ -20,6 +20,7 @@ const [iconFrom, iconTo] = selectIconArray;
 const converterInputArray = Array.from(document.querySelectorAll(DOM.converterInput));
 const [fromConverterInput, toConverterInput] = converterInputArray;
 const converterDate = document.querySelector(DOM.dateSpan);
+const ratesBaseSelect = document.querySelector(DOM.ratesBaseSelect);
 
 export const variables = {
   selectArray,
@@ -32,6 +33,7 @@ export const variables = {
   fromConverterInput,
   toConverterInput,
   converterDate,
+  ratesBaseSelect,
 };
 const renderDropdown = type => {
   const html = `<option class="cur-option" value="%%value%%">%%code%% - %%name%%</option>`;
@@ -87,7 +89,9 @@ const setTime = () => {
   return time;
 };
 
-const renderRates = state => {
+const renderRates = apiData => {
+  document.querySelector(DOM.ratesBody).innerHTML = '';
+
   // Iterate through currency list in multiples of 10(max allowed by page layout per column)
   for (let s = 0; s < CURRENCY_DATA.length; s += 10) {
     const htmlArr = [];
@@ -103,8 +107,8 @@ const renderRates = state => {
       newHtml1 = newHtml1.replace('%%{code}%%', CURRENCY_DATA[i].code);
       //newHtml1 = newHtml1.replace('%%{name}%%', CURRENCY_DATA[i].name <= 15 ? CURRENCY_DATA[i].name : `${CURRENCY_DATA[i].name.slice(0, 14)}...`);
       newHtml1 = newHtml1.replace('%%{name}%%', CURRENCY_DATA[i].name);
-      newHtml1 = newHtml1.replace('%%{value}%%', state.apiData[CURRENCY_DATA[i].code] ? state.apiData[CURRENCY_DATA[i].code] : '-');
-      newHtml1 = newHtml1.replace('%%{color}%%', state.apiData[CURRENCY_DATA[i].code] > 1 ? 'red' : 'green');
+      newHtml1 = newHtml1.replace('%%{value}%%', apiData[CURRENCY_DATA[i].code] ? apiData[CURRENCY_DATA[i].code] : '-');
+      newHtml1 = newHtml1.replace('%%{color}%%', apiData[CURRENCY_DATA[i].code] > 1 ? 'red' : 'green');
 
       // Store individual currency markup in array
       htmlArr.push(newHtml1);

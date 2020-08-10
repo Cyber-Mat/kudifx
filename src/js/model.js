@@ -33,8 +33,21 @@ const calculateValue = (state, type) => {
   }
 };
 
+const changeBase = (state, base) => {
+  // Store API data and make base change in new object
+  let newApiData = state.apiData;
+  const newBase = 1 / newApiData[base];
+
+  // Convert all currencies to equivalent values in new base currency
+  CURRENCY_DATA.forEach(cur => {
+    newApiData[cur.code] = (newApiData[cur.code] * newBase).toFixed(6);
+  });
+  return newApiData;
+};
+
 const modelCtrl = (() => ({
   getRates,
   calculateValue,
+  changeBase,
 }))();
 export default modelCtrl;
