@@ -107,7 +107,10 @@ const renderRates = apiData => {
       newHtml1 = newHtml1.replace('%%{code}%%', CURRENCY_DATA[i].code);
       //newHtml1 = newHtml1.replace('%%{name}%%', CURRENCY_DATA[i].name <= 15 ? CURRENCY_DATA[i].name : `${CURRENCY_DATA[i].name.slice(0, 14)}...`);
       newHtml1 = newHtml1.replace('%%{name}%%', CURRENCY_DATA[i].name);
-      newHtml1 = newHtml1.replace('%%{value}%%', apiData[CURRENCY_DATA[i].code] ? apiData[CURRENCY_DATA[i].code] : '-');
+      newHtml1 = newHtml1.replace(
+        '%%{value}%%',
+        apiData[CURRENCY_DATA[i].code] && !isNaN(apiData[CURRENCY_DATA[i].code]) ? apiData[CURRENCY_DATA[i].code] : '-'
+      );
       newHtml1 = newHtml1.replace('%%{color}%%', apiData[CURRENCY_DATA[i].code] > 1 ? 'red' : 'green');
 
       // Store individual currency markup in array

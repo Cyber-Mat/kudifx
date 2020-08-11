@@ -220,6 +220,12 @@ select:focus {
   font-family: "Recursive", sans-serif;
   font-weight: 300; }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
 .rates {
   padding: 4rem;
   padding-top: 7rem;
@@ -301,3 +307,33 @@ select:focus {
 
 .red {
   color: red; }
+
+.error-card {
+  padding: 10rem 30rem;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: all .5s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden; }
+  .error-card p {
+    height: 22rem;
+    width: 30rem;
+    padding: 4rem;
+    color: #333;
+    font-size: 2rem;
+    font-weight: 400;
+    background-color: white;
+    position: relative; }
+    .error-card p .close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: red;
+      cursor: pointer; }

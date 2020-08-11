@@ -107,13 +107,28 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     const newApiData = modelCtrl.changeBase(state, base);
 
     viewCtrl.renderRates(newApiData);
+  });
 
-    // RATES DROPDOWN EVENT LISTENER
-    ratesBaseSelect.addEventListener('change', e => {
-      const base = e.target.value;
-      const newApiData = modelCtrl.changeBase(state, base);
+  // RATES DROPDOWN EVENT LISTENER
+  ratesBaseSelect.addEventListener('change', e => {
+    const base = e.target.value;
+    const newApiData = modelCtrl.changeBase(state, base);
 
-      viewCtrl.renderRates(newApiData);
-    });
+    viewCtrl.renderRates(newApiData);
+  });
+
+  // ERROR POP-UP CLOSE BUTTON EVENT LISTENERS
+  document.querySelector('.close').addEventListener('click', () => {
+    document.querySelector('.error-card').style = {
+      visibility: 'hidden',
+      opacity: 0,
+    };
+  });
+
+  document.querySelector('.error-card').addEventListener('click', () => {
+    document.querySelector('.error-card').style = {
+      visibility: 'hidden',
+      opacity: 0,
+    };
   });
 })(viewCtrl, modelCtrl);
