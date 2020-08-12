@@ -337,3 +337,22 @@ select:focus {
       right: 1rem;
       color: red;
       cursor: pointer; }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 8rem;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.4rem; }
+  .footer span {
+    color: red; }
+  .footer p > a {
+    display: inline-block;
+    background-color: #333;
+    margin: 0 1rem;
+    transition: all .3s; }
+    .footer p > a:hover {
+      box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+      transform: scale(1.1); }

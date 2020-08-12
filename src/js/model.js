@@ -9,8 +9,8 @@ const getRates = async state => {
     // await alert('success');
   } catch (e) {
     console.log(e);
-    document.querySelector('.error-card').style.opacity = 1;
-    document.querySelector('.error-card').style.visibility = 'visible';
+    // document.querySelector('.error-card').style.opacity = 1;
+    // document.querySelector('.error-card').style.visibility = 'visible';
   }
 };
 
