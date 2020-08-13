@@ -146,7 +146,6 @@
             height: 2rem;
             fill: #fff;
             border-radius: 100%;
-            // animation: rotate 1.5s infinite linear;
         }
     }
 
@@ -186,14 +185,4 @@
     font-size: 6rem;
     font-family: $font-secondary;
     font-weight: 300;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
 }

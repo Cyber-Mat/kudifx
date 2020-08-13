@@ -95,7 +95,7 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     viewCtrl.renderDropdown('main');
 
     // Make API request and store in state
-    // await modelCtrl.getRates(state);
+    await modelCtrl.getRates(state);
 
     // Set time
     window.setInterval(viewCtrl.setTime, 1000);

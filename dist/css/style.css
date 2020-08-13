@@ -239,12 +239,6 @@ select:focus {
   font-family: "Recursive", sans-serif;
   font-weight: 300; }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(360deg); } }
-
 .rates {
   padding: 4rem;
   padding-top: 7rem;
@@ -375,3 +369,33 @@ select:focus {
     .footer p > a:hover {
       box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.5);
       transform: scale(1.05); }
+
+.success-card {
+  padding: 10rem 30rem;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s;
+  position: fixed;
+  top: 0;
+  left: 0; }
+  .success-card__icon {
+    height: 20rem;
+    width: 20rem;
+    fill: #52A494;
+    animation: rotate 1.5s infinite linear; }
+  .success-card span {
+    color: #fff;
+    display: block;
+    font-size: 3rem;
+    font-weight: 400; }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }

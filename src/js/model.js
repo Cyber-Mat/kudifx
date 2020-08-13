@@ -2,13 +2,18 @@ import axios from 'axios';
 import CURRENCY_DATA from './currency.data';
 import SYMBOL_DATA from './symbols.data';
 
+const loader = () => {
+  document.querySelector('.success-card').style.opacity = '0';
+  document.querySelector('.success-card').style.visibility = 'hidden';
+};
 const getRates = async state => {
   try {
     const data = await axios('http://data.fixer.io/api/latest?access_key=9ff7c352dc9fdbfef38d8e9d431a73d8');
     state.apiData = data.data.rates;
-    // await alert('success');
+    await loader();
   } catch (e) {
-    document.querySelector('.error-card').style.opacity = 1;
+    loader();
+    document.querySelector('.error-card').style.opacity = '1';
     document.querySelector('.error-card').style.visibility = 'visible';
   }
 };
