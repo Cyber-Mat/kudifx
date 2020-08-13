@@ -7,7 +7,6 @@
     padding: 5rem 2rem;
     border-bottom: $border-light;
 
-
     &__text {
         justify-self: start;
 
@@ -19,6 +18,15 @@
             color: transparent;
             -webkit-background-clip: text;
             background-clip: text;
+
+            @media only screen and(max-width:$bp-medium) {
+                font-size: 2.8rem;
+            }
+
+            @media only screen and(max-width:$bp-small) {
+                font-size: 2.6rem;
+                transform: translateX(-1rem);
+            }
         }
 
         .logo {
@@ -30,12 +38,34 @@
 
     .nav {
         justify-self: stretch;
+        position: relative;
+        align-self: flex-end;
+
 
         &__list {
             list-style-type: none;
             display: flex;
 
             justify-content: space-evenly;
+
+            @media only screen and(max-width:500px) {
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            &2 {
+                list-style-type: none;
+                display: flex;
+                margin-left: 1rem;
+                transition: all .7s;
+
+                box-shadow: $shadow-light;
+
+                &>li {
+                    margin-right: .7rem;
+                }
+            }
+
         }
 
         &__item {
@@ -49,6 +79,42 @@
 
             &:hover {
                 color: $color-primary;
+            }
+
+            @media only screen and(max-width:$bp-medium) {
+                font-size: 1.5rem;
+            }
+
+            @media only screen and(max-width:$bp-small) {
+                justify-self: start;
+                justify-content: flex-start;
+            }
+        }
+
+        .hbg {
+            position: absolute;
+            top: 0;
+            right: 5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+
+            @media only screen and(max-width:500px) {
+                opacity: 1;
+                visibility: visible;
+
+                .mid,
+                .top,
+                .low {
+                    display: block;
+                    width: 2rem;
+                    height: .25rem;
+                    background-color: #333;
+                }
+
+                .mid {
+                    margin: .5rem 0;
+                }
             }
         }
     }
@@ -82,5 +148,32 @@
             display: flex;
             flex-direction: column;
         }
+
+        @media only screen and(max-width:$bp-small) {
+            display: none;
+        }
     }
+
+    @media only screen and(max-width:$bp-small) {
+        padding: 2rem 0rem;
+        grid-template-columns: 1fr 4fr;
+    }
+}
+
+.hide {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+.active1 {
+    transform: rotate(45deg) translate(-3px, 12px);
+}
+
+.active2 {
+    opacity: 0;
+}
+
+.active3 {
+    transform: rotate(-45deg) translate(-3px, -12px);
 }

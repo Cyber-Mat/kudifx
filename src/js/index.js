@@ -30,6 +30,10 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     ratesBaseSelect,
     hDate,
     hTime,
+    navList,
+    top,
+    mid,
+    low,
   } = variables;
 
   /**
@@ -95,7 +99,7 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     viewCtrl.renderDropdown('main');
 
     // Make API request and store in state
-    await modelCtrl.getRates(state);
+    // await modelCtrl.getRates(state);
 
     // Set time
     window.setInterval(viewCtrl.setTime, 1000);
@@ -133,5 +137,14 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
       visibility: 'hidden',
       opacity: 0,
     };
+  });
+
+  // EVENT LISTENER FOR HAMBURGER
+  document.querySelector('.hbg').addEventListener('click', e => {
+    top.classList.toggle('active1');
+    mid.classList.toggle('active2');
+    low.classList.toggle('active3');
+
+    navList.classList.toggle('hide');
   });
 })(viewCtrl, modelCtrl);

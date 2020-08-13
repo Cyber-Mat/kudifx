@@ -1,7 +1,6 @@
 .converter {
     display: grid;
     grid-template-rows: .5fr .25fr 1fr;
-    //grid-row-gap: 2rem;
 
     padding: 3rem;
     align-items: center;
@@ -11,6 +10,10 @@
         h1 {
             font-weight: 700;
             letter-spacing: .3rem;
+
+            @media only screen and(max-width:$bp-medium) {
+                font-size: 2.2rem;
+            }
         }
 
         p {
@@ -24,7 +27,6 @@
         display: grid;
         grid-template-columns: 1fr min-content 1fr;
         align-items: end;
-        //transform: translateY(-30%);
 
         .cur {
             &-container {
@@ -154,7 +156,6 @@
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 14rem;
         transform: translateY(40%);
-        //overflow: hidden;
 
         div {
             display: flex;
