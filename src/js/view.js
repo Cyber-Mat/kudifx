@@ -11,6 +11,8 @@ const DOM = {
   dateSpan: '.date',
   ratesBody: '.rates__body',
   ratesBaseSelect: '.rates__base',
+  hDate: '.hdate',
+  hTime: '.htime',
 };
 
 const selectArray = Array.from(document.querySelectorAll(DOM.select));
@@ -21,6 +23,8 @@ const converterInputArray = Array.from(document.querySelectorAll(DOM.converterIn
 const [fromConverterInput, toConverterInput] = converterInputArray;
 const converterDate = document.querySelector(DOM.dateSpan);
 const ratesBaseSelect = document.querySelector(DOM.ratesBaseSelect);
+const hDate = document.querySelector(DOM.hDate);
+const hTime = document.querySelector(DOM.hTime);
 
 export const variables = {
   selectArray,
@@ -34,6 +38,8 @@ export const variables = {
   toConverterInput,
   converterDate,
   ratesBaseSelect,
+  hDate,
+  hTime,
 };
 const renderDropdown = type => {
   const html = `<option class="cur-option" value="%%value%%">%%code%% - %%name%%</option>`;
@@ -134,6 +140,16 @@ const renderRates = apiData => {
   }
 };
 
+const setHeaderDateAndTime = () => {
+  const headerDate = new Date();
+  const day = headerDate.toDateString().split(' ')[0]; //1
+  const date = headerDate.toLocaleDateString().split('/').join('.');
+  const time = headerDate.toTimeString().split(' ')[0];
+  const tz = headerDate.toTimeString().split(' ')[1];
+  hDate.textContent = `${day}, ${date}`;
+  hTime.textContent = `${time} ${tz}`;
+};
+
 const viewCtrl = (() => ({
   DOM,
   renderDropdown,
@@ -141,6 +157,7 @@ const viewCtrl = (() => ({
   renderSymbol,
   setTime,
   renderRates,
+  setHeaderDateAndTime,
 }))();
 
 export default viewCtrl;

@@ -8,9 +8,8 @@ const getRates = async state => {
     state.apiData = data.data.rates;
     // await alert('success');
   } catch (e) {
-    console.log(e);
-    // document.querySelector('.error-card').style.opacity = 1;
-    // document.querySelector('.error-card').style.visibility = 'visible';
+    document.querySelector('.error-card').style.opacity = 1;
+    document.querySelector('.error-card').style.visibility = 'visible';
   }
 };
 

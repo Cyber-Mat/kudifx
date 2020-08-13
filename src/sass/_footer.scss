@@ -1,9 +1,8 @@
 .footer {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     height: 8rem;
-
     background-color: #333;
     color: #fff;
     font-size: 1.4rem;
@@ -15,12 +14,12 @@
     p>a {
         display: inline-block;
         background-color: #333;
-        margin: 0 1rem;
+        margin: 0 .5rem;
         transition: all .3s;
 
         &:hover {
-            box-shadow: 0 2rem 4rem rgba(#000, .25);
-            transform: scale(1.1);
+            box-shadow: 0 1rem 4rem rgba(#000, .5);
+            transform: scale(1.05);
         }
     }
 }

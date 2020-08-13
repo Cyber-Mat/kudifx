@@ -28,6 +28,8 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     toConverterInput,
     converterDate,
     ratesBaseSelect,
+    hDate,
+    hTime,
   } = variables;
 
   /**
@@ -51,7 +53,6 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
       else fromConverterInput.value = 0;
     }
   });
-
   // TO DROPDOWN EVENT LISTENER
   selectTo.addEventListener('change', () => {
     // Render Icons
@@ -94,7 +95,7 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     viewCtrl.renderDropdown('main');
 
     // Make API request and store in state
-    await modelCtrl.getRates(state);
+    // await modelCtrl.getRates(state);
 
     // Set time
     window.setInterval(viewCtrl.setTime, 1000);
@@ -105,8 +106,10 @@ const appCtrl = ((viewCtrl, modelCtrl) => {
     // Render exchange rates on page load in USD(convert from EUR default of API )
     const base = ratesBaseSelect.value;
     const newApiData = modelCtrl.changeBase(state, base);
-
     viewCtrl.renderRates(newApiData);
+
+    // Set header date and time
+    window.setInterval(viewCtrl.setHeaderDateAndTime, 1000);
   });
 
   // RATES DROPDOWN EVENT LISTENER
