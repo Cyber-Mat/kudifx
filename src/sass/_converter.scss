@@ -107,7 +107,6 @@
                 transition: all .2s;
                 border-radius: 100%;
 
-
                 svg {
                     height: 2rem;
                     width: 2rem;
@@ -138,6 +137,11 @@
             margin-bottom: -2rem;
         }
 
+        @media only screen and (max-width:$bp-vsmall) {
+            width: 6.5rem;
+            height: 6.5rem;
+        }
+
         &::after {
             display: block;
             content: '';
@@ -160,17 +164,26 @@
         height: 4.5rem;
         background-color: $color-google;
         cursor: pointer;
-        z-index: 10;
 
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @media only screen and (max-width:$bp-vsmall) {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
 
         svg {
             width: 2rem;
             height: 2rem;
             fill: #fff;
             border-radius: 100%;
+
+            @media only screen and (max-width:$bp-vsmall) {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
         }
     }
 
@@ -194,6 +207,10 @@
             @media only screen and(max-width:$bp-small) {
                 font-size: 5rem;
             }
+
+            @media only screen and(max-width:$bp-vsmall) {
+                font-size: 3rem;
+            }
         }
     }
 }
@@ -210,5 +227,9 @@
 
     @media only screen and(max-width:$bp-small) {
         font-size: 5rem;
+    }
+
+    @media only screen and(max-width:$bp-small) {
+        font-size: 3rem;
     }
 }

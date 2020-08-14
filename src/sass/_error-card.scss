@@ -11,9 +11,12 @@
     position: fixed;
     top: 0;
     left: 0;
-
-    opacity: 0;
     visibility: hidden;
+    opacity: 0;
+
+    @media only screen and (max-width:$bp-small) {
+        padding: 10rem;
+    }
 
     p {
         height: 22rem;
@@ -25,6 +28,23 @@
         background-color: rgba(#fff, 1);
         position: relative;
 
+        @media only screen and (max-width:$bp-medium) {
+            width: 25rem;
+            height: 17rem;
+            font-size: 1.4rem;
+            padding: 2rem;
+        }
+
+        @media only screen and (max-width:$bp-small) {
+            width: 40rem;
+            height: 10rem;
+            padding: 2rem;
+        }
+
+        @media only screen and (max-width:$bp-vsmall) {
+            font-size: 1.2rem;
+        }
+
         .close {
             position: absolute;
             top: 1rem;
@@ -32,6 +52,5 @@
             color: red;
             cursor: pointer;
         }
-
     }
 }

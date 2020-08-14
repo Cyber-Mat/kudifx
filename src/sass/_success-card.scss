@@ -13,14 +13,20 @@
     top: 0;
     left: 0;
 
-    // TEST
-    display: none;
+    @media only screen and (max-width:$bp-vsmall) {
+        padding: 10rem;
+    }
 
     &__icon {
         height: 20rem;
         width: 20rem;
         fill: $color-tertiary;
         animation: rotate 1.5s infinite linear;
+
+        @media only screen and (max-width:$bp-medium) {
+            width: 10rem;
+            height: 10rem;
+        }
     }
 
     span {
@@ -28,6 +34,10 @@
         display: block;
         font-size: 3rem;
         font-weight: 400;
+
+        @media only screen and (max-width:$bp-medium) {
+            font-size: 2rem;
+        }
     }
 }
 

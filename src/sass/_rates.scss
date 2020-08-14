@@ -12,6 +12,13 @@
         width: 0;
     }
 
+    @media only screen and (max-width:$bp-small) {
+        padding-top: 2rem;
+    }
+
+    @media only screen and (max-width:$bp-vsmall) {
+        margin: 0 1rem;
+    }
 
     &__header {
         display: flex;
@@ -20,6 +27,11 @@
         h1 {
             font-weight: 700;
             letter-spacing: .3rem;
+
+            @media only screen and (max-width:$bp-vsmall) {
+                font-size: 2.2rem;
+                margin-left: -1rem;
+            }
         }
 
         .rates__base {
@@ -53,6 +65,10 @@
             &-option {
                 white-space: unset;
             }
+
+            @media only screen and (max-width:$bp-vsmall) {
+                font-size: 1rem;
+            }
         }
     }
 
@@ -79,6 +95,10 @@
 
         @media only screen and (max-width:$bp-medium) {
             animation: slide3 30s linear 0s infinite alternate;
+        }
+
+        @media only screen and (max-width:$bp-vsmall) {
+            font-size: 1rem;
         }
     }
 
@@ -144,5 +164,15 @@
 
     100% {
         transform: translateX(-88%);
+    }
+}
+
+@keyframes slide4 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-92%);
     }
 }

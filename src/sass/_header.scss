@@ -7,6 +7,11 @@
     padding: 5rem 2rem;
     border-bottom: $border-light;
 
+    @media only screen and(max-width:$bp-small) {
+        padding: 2rem 0rem;
+        grid-template-columns: 1fr 4fr;
+    }
+
     &__text {
         justify-self: start;
 
@@ -87,14 +92,6 @@
             font-weight: 700;
             transition: all .2s;
 
-            &:active {
-                color: red;
-            }
-
-            &:hover {
-                color: $color-primary;
-            }
-
             @media only screen and(max-width:$bp-medium) {
                 font-size: 1.5rem;
             }
@@ -102,6 +99,14 @@
             @media only screen and(max-width:$bp-small) {
                 justify-self: start;
                 justify-content: flex-start;
+            }
+
+            &:active {
+                color: red;
+            }
+
+            &:hover {
+                color: $color-primary;
             }
         }
 
@@ -143,6 +148,10 @@
         grid-column-gap: 1rem;
         align-items: center;
 
+        @media only screen and(max-width:$bp-small) {
+            display: none;
+        }
+
         &-icon {
             background-color: rgba(#000, .1);
             border-radius: 100%;
@@ -164,15 +173,6 @@
             display: flex;
             flex-direction: column;
         }
-
-        @media only screen and(max-width:$bp-small) {
-            display: none;
-        }
-    }
-
-    @media only screen and(max-width:$bp-small) {
-        padding: 2rem 0rem;
-        grid-template-columns: 1fr 4fr;
     }
 }
 
