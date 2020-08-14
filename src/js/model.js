@@ -8,7 +8,7 @@ const loader = () => {
 };
 const getRates = async state => {
   try {
-    const data = await axios('http://data.fixer.io/api/latest?access_key=9ff7c352dc9fdbfef38d8e9d431a73d8');
+    const data = await axios('https://cors-anywhere.herokuapp.com/http://data.fixer.io/api/latest?access_key=9ff7c352dc9fdbfef38d8e9d431a73d8');
     state.apiData = data.data.rates;
     await loader();
   } catch (e) {
