@@ -21,17 +21,18 @@
         </a>
       </div>
       <nav class="nav">
-        <div class="hbg">
-          <span class="top">&nbsp;</span>
-          <span class="mid">&nbsp;</span>
-          <span class="low">&nbsp;</span>
-        </div>
+
         <ul class="nav__list">
           <li class="nav__item"><a href="/">Home</a></li>
           <li class="nav__item"><a href="#converter">Converter</a></li>
           <li class="nav__item"><a href="#rates">Rates</a></li>
           <li class="nav__item"><a href="#footer">Contact Us</a></li>
         </ul>
+        <div class="hbg">
+          <span class="top">&nbsp;</span>
+          <span class="mid">&nbsp;</span>
+          <span class="low">&nbsp;</span>
+        </div>
         <ul class="nav__list2 hide">
           <li class="nav__item"><a href="/">Home</a></li>
           <li class="nav__item"><a href="#converter">Converter</a></li>
@@ -74,6 +75,11 @@
                 <use xlink:href="img/sprite.svg#icon-AED"></use>
               </svg></figure>
           </div>
+
+          <div class="converter__display">
+            <span class=" from-symbol">د.إ</span>
+            <input type="text" class="converter__input input-from">
+          </div>
         </div>
 
         <div class="bg">
@@ -97,19 +103,17 @@
               </svg></figure>
             </figure>
           </div>
+          <div class="converter__display">
+            <span class=" to-symbol">د.إ</span>
+            <input type="text" class="converter__input input-to">
+          </div>
         </div>
+        <!-- <div class="converter__display">
+
+
+        </div> -->
       </div>
 
-      <div class="converter__display">
-        <div>
-          <span class="from-symbol">د.إ</span>
-          <input type="text" class="converter__input input-from">
-        </div>
-        <div>
-          <span class="to-symbol">د.إ</span>
-          <input type="text" class="converter__input input-to">
-        </div>
-      </div>
     </section>
 
     <section id="rates" class="rates">

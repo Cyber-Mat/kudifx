@@ -27,6 +27,8 @@ $border-light-2: .5px solid rgba(red, .4);
 $border-dark: .5px solid rgba($color-grey-dark-3, 1);
 
 // MEDIA QUERY BREAKPOINTS
-$bp-large: 56.25em;
-$bp-medium: 43.75em;
-$bp-small: 37.5em;
+$bp-large: 56.25em; // 900px
+$bp-medium: 43.75em; // 700px
+$bp-small: 37.5em; // 600px
+$bp-vsmall: 31.25em; // 500px
+$bp-usmall:25em; // 400px

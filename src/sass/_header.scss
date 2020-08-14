@@ -40,29 +40,43 @@
         justify-self: stretch;
         position: relative;
         align-self: flex-end;
+        transform: translateY(.7rem);
 
+        display: grid;
+        grid-template-columns: 1fr min-content;
+        grid-template-rows: repeat(2, 1fr);
 
         &__list {
             list-style-type: none;
-            display: flex;
+            grid-row: 1/2;
+            grid-column: 1/2;
+            align-self: end;
 
+            display: flex;
             justify-content: space-evenly;
 
-            @media only screen and(max-width:500px) {
+            @media only screen and(max-width:$bp-vsmall) {
                 visibility: hidden;
                 opacity: 0;
             }
 
             &2 {
-                list-style-type: none;
                 display: flex;
-                margin-left: 1rem;
+                flex-direction: column;
+                list-style-type: none;
                 transition: all .7s;
-
                 box-shadow: $shadow-light;
+                background-color: #fff;
+
+                position: fixed;
+                top: 0;
+                right: 5rem;
+                grid-column: 1/2;
+                grid-row: 2/-1;
 
                 &>li {
-                    margin-right: .7rem;
+                    padding: .7rem 1rem;
+                    border-bottom: .5px solid rgb(206, 206, 206);
                 }
             }
 
@@ -98,8 +112,10 @@
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
+            grid-column: 2/-1;
+            grid-row: 1/2;
 
-            @media only screen and(max-width:500px) {
+            @media only screen and(max-width:$bp-vsmall) {
                 opacity: 1;
                 visibility: visible;
 

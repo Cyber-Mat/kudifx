@@ -67,16 +67,19 @@
         font-weight: 400;
 
         justify-items: center;
-        animation-name: slide;
-        animation-duration: 30s;
-        animation-timing-function: linear;
-        animation-direction: alternate;
-        animation-iteration-count: infinite;
+        animation: slide 30s linear 0s infinite alternate;
 
         &:hover {
             animation-play-state: paused;
         }
 
+        @media only screen and (max-width:$bp-large) {
+            animation: slide2 30s linear 0s infinite alternate;
+        }
+
+        @media only screen and (max-width:$bp-medium) {
+            animation: slide3 30s linear 0s infinite alternate;
+        }
     }
 
     &__col {
@@ -102,9 +105,16 @@
             display: grid;
             grid-template-columns: repeat(3, max-content);
             grid-column-gap: 3rem;
-
         }
     }
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
 }
 
 @keyframes slide {
@@ -117,10 +127,22 @@
     }
 }
 
-.green {
-    color: green;
+@keyframes slide2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-86%);
+    }
 }
 
-.red {
-    color: red;
+@keyframes slide3 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-88%);
+    }
 }
