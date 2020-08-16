@@ -209,7 +209,7 @@ select:focus {
       grid-template-rows: min-content 1fr; } }
   @media only screen and (max-width: 31.25em) {
     .converter {
-      padding: 0 1rem 3rem 1rem; } }
+      padding: 2rem 2rem 3rem 2rem; } }
   @media only screen and (max-width: 37.5em) {
     .converter__header {
       margin-bottom: 4rem; } }
@@ -393,7 +393,7 @@ select:focus {
   @media only screen and (max-width: 31.25em) {
     .rates {
       margin: 0 1rem;
-      padding: 1rem; } }
+      padding: 2rem; } }
   .rates__header {
     display: flex;
     align-items: flex-end; }
