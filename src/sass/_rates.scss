@@ -36,7 +36,6 @@
         }
 
         .rates__base {
-            display: block;
             border: none;
             background-color: transparent;
             height: 3rem;
@@ -140,41 +139,41 @@
 }
 
 @keyframes slide {
-    0% {
+    from {
         transform: translateX(0);
     }
 
-    100% {
+    to {
         transform: translateX(-80%);
     }
 }
 
 @keyframes slide2 {
-    0% {
+    from {
         transform: translateX(0);
     }
 
-    100% {
+    to {
         transform: translateX(-86%);
     }
 }
 
 @keyframes slide3 {
-    0% {
+    from {
         transform: translateX(0);
     }
 
-    100% {
+    to {
         transform: translateX(-88%);
     }
 }
 
 @keyframes slide4 {
-    0% {
+    from {
         transform: translateX(0);
     }
 
-    100% {
+    to {
         transform: translateX(-92%);
     }
 }
