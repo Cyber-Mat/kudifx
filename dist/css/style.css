@@ -157,9 +157,9 @@ select:focus {
             background-color: #333; }
           .header .nav .hbg .mid {
             margin: .5rem 0; } }
-      @media only screen and (max-width: 25em) {
+      @media only screen and (max-width: 31.25em) {
         .header .nav .hbg {
-          transform: translateY(3rem); } }
+          transform: translateY(-1rem); } }
   .header__date {
     justify-self: start;
     display: grid;

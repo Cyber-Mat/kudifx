@@ -142,8 +142,8 @@
                 }
             }
 
-            @media only screen and (max-width:$bp-usmall) {
-                transform: translateY(3rem);
+            @media only screen and (max-width:$bp-vsmall) {
+                transform: translateY(-1rem);
             }
         }
     }
