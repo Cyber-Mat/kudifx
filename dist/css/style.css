@@ -48,9 +48,9 @@ select:focus {
   min-height: 50rem;
   display: grid;
   grid-template-rows: .2fr 1fr .6fr; }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 43.75em) {
     .container {
-      margin-top: 0; } }
+      margin: 0 auto; } }
 
 .header {
   display: grid;
@@ -63,6 +63,9 @@ select:focus {
     .header {
       padding: 2rem 0rem;
       grid-template-columns: 1fr 4fr; } }
+  @media only screen and (max-width: 31.25em) {
+    .header {
+      padding: 0rem; } }
   .header__text {
     justify-self: start;
     display: flex;
@@ -204,9 +207,15 @@ select:focus {
   @media only screen and (max-width: 37.5em) {
     .converter {
       grid-template-rows: min-content 1fr; } }
+  @media only screen and (max-width: 31.25em) {
+    .converter {
+      padding: 0 1rem 3rem 1rem; } }
   @media only screen and (max-width: 37.5em) {
     .converter__header {
       margin-bottom: 4rem; } }
+  @media only screen and (max-width: 31.25em) {
+    .converter__header {
+      margin-bottom: 2rem; } }
   .converter__header h1 {
     font-weight: 700;
     letter-spacing: .3rem; }
@@ -383,7 +392,8 @@ select:focus {
       padding-top: 2rem; } }
   @media only screen and (max-width: 31.25em) {
     .rates {
-      margin: 0 1rem; } }
+      margin: 0 1rem;
+      padding: 1rem; } }
   .rates__header {
     display: flex;
     align-items: flex-end; }
