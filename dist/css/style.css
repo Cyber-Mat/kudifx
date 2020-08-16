@@ -405,6 +405,7 @@ select:focus {
           font-size: 2.2rem;
           margin-left: -1rem; } }
     .rates__header .rates__base {
+      display: block;
       border: none;
       background-color: transparent;
       height: 3rem;
