@@ -1,1 +1,1 @@
-kudiFx
+kudiFx currency converter
